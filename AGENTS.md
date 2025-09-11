@@ -138,6 +138,7 @@ npx shadcn@latest add [component-name]
 - **Storage**: localStorage for data persistence
 - **Styling**: Keep it minimal with Tailwind classes
 - **Components**: Maximum 4-5 components total for simplicity
+- **Theme Colors**: Use the CSS variables defined in index.css for the shadcn/ui theme toggle (not default Tailwind colors)
 
 ## Best Practices
 
