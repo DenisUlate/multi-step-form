@@ -6,7 +6,8 @@ This document provides essential information for AI agents and developers workin
 
 **Project Name:** multi-step-form  
 **Type:** React TypeScript Application with Vite  
-**Purpose:** Multi-step form implementation using modern React patterns
+**Purpose:** Simple 3-step user registration form with dark mode toggle  
+**Time Goal:** Complete implementation in under 2 hours
 
 ## Technology Stack
 
@@ -114,14 +115,29 @@ npx shadcn@latest add [component-name]
 
 ## Multi-Step Form Requirements
 
-When developing the multi-step form:
+**Project Requirements (2-hour implementation goal):**
 
-1. **State Management**: Consider React's built-in state or context for form data
-2. **Validation**: Implement proper form validation for each step
-3. **Navigation**: Provide clear step indicators and navigation controls
-4. **Accessibility**: Ensure keyboard navigation and screen reader support
-5. **Responsive Design**: Use Tailwind's responsive utilities
-6. **Progress Indication**: Show current step and overall progress
+### Core Features
+
+1. **3 Steps Only**:
+
+   - Step 1: User Info (name, email, phone)
+   - Step 2: Account Details (username, password, confirm password)
+   - Step 3: Review (display all entered data)
+
+2. **Single State Object**: Use one unified state object for all form data
+3. **Navigation**: "Next" and "Back" buttons for step navigation
+4. **Data Persistence**: Save to localStorage on submit, log to console
+5. **Auto-load**: Use useEffect to load saved data on component mount
+6. **Dark Mode**: Implement using useContext for theme switching
+
+### Technical Implementation
+
+- **State Management**: useState for form data, useContext for theme
+- **Validation**: Simple required field validation only
+- **Storage**: localStorage for data persistence
+- **Styling**: Keep it minimal with Tailwind classes
+- **Components**: Maximum 4-5 components total for simplicity
 
 ## Best Practices
 
@@ -193,39 +209,45 @@ When acting as a teacher for building the multi-step form project:
 
 #### Multi-Step Form Development Process
 
-**Phase 1: UI Structure & Layout**
+**Phase 1: Setup & Structure (30 minutes)**
 
-1. **Step 1**: Create the main form container and layout structure
-   - Explain: Container setup, responsive design principles, and layout composition
-2. **Step 2**: Design and implement step indicators/progress bar
-   - Explain: Visual feedback systems, state representation, and user navigation cues
-3. **Step 3**: Create form step components (empty shells)
-   - Explain: Component composition, props interface design, and reusability patterns
-4. **Step 4**: Implement navigation buttons (Previous/Next/Submit)
-   - Explain: Button states, conditional rendering, and user interaction patterns
+1. **Step 1**: Create ThemeContext and dark mode toggle
 
-**Phase 2: Form Structure & Validation** 5. **Step 5**: Add form fields to each step with proper types
+   - Explain: Context API usage, theme switching, and CSS variable management
 
-- Explain: Form input types, controlled components, and TypeScript interfaces
+2. **Step 2**: Create the main form container with step indicator
+   - Explain: Component structure, step tracking state, and basic layout
 
-6. **Step 6**: Implement form validation for each step
-   - Explain: Validation strategies, error handling, and user feedback mechanisms
-7. **Step 7**: Create form state management structure
-   - Explain: State management patterns, data flow, and React state principles
+**Phase 2: Form Steps Implementation (60 minutes)**
 
-**Phase 3: Logic & Functionality** 8. **Step 8**: Implement step navigation logic
+3. **Step 3**: Build Step 1 - User Info form (name, email, phone)
 
-- Explain: State transitions, conditional logic, and user flow control
+   - Explain: Controlled inputs, state management, and form structure
 
-9. **Step 9**: Add form data persistence between steps
-   - Explain: Data management, state preservation, and form data handling
-10. **Step 10**: Implement form submission and completion
-    - Explain: Data processing, submission handling, and success states
+4. **Step 4**: Build Step 2 - Account Details (username, password, confirm password)
 
-**Phase 4: Enhancement & Polish** 11. **Step 11**: Add loading states and user feedback - Explain: Asynchronous operations, user experience, and feedback systems
+   - Explain: Password fields, validation patterns, and security considerations
 
-12. **Step 12**: Implement accessibility features
-    - Explain: ARIA attributes, keyboard navigation, and inclusive design principles
+5. **Step 5**: Build Step 3 - Review page displaying all data
+   - Explain: Data display, formatting, and user confirmation patterns
+
+**Phase 3: Navigation & Logic (20 minutes)**
+
+6. **Step 6**: Implement navigation buttons and step switching logic
+
+   - Explain: Conditional rendering, step validation, and user flow control
+
+7. **Step 7**: Add simple validation (required fields only)
+   - Explain: Basic form validation, error states, and user feedback
+
+**Phase 4: Data Persistence (10 minutes)**
+
+8. **Step 8**: Implement localStorage save/load functionality
+
+   - Explain: Browser storage, data serialization, and useEffect patterns
+
+9. **Step 9**: Add form submission with console logging
+   - Explain: Form submission handling, data processing, and debugging techniques
 
 #### Before Each Step
 
@@ -255,6 +277,5 @@ When acting as a teacher for building the multi-step form project:
 - Use clear, educational language
 - Provide context for each decision
 - Explain both the "what" and "why"
-- Encourage questions and clarifications
 - Wait for confirmation before proceeding to next step
 - Offer alternative approaches when relevant
