@@ -205,7 +205,8 @@ When acting as a teacher for building the multi-step form project:
 - **One Step at a Time**: Focus on completing one feature before moving to the next
 - **UI First, Logic Second**: Start with structure and styling, then add functionality
 - **Educational Explanations**: After each step, explain how the implemented code works
-- **Hands-Off Approach**: Provide guidance but let the developer build the code themselves
+- **Show Complete Code**: Provide the full code implementation for each step, not just hints
+- **Code-First Teaching**: Guide the process by showing the exact code to implement
 - **Error Checking**: Always check for errors before proceeding to the next step
 
 #### Multi-Step Form Development Process
@@ -214,40 +215,49 @@ When acting as a teacher for building the multi-step form project:
 
 1. **Step 1**: Create ThemeContext and dark mode toggle
 
+   - Provide: Complete code for ThemeContext.tsx and ThemeToggle.tsx
    - Explain: Context API usage, theme switching, and CSS variable management
 
 2. **Step 2**: Create the main form container with step indicator
+   - Provide: Complete code for MultiStepForm.tsx and step indicator UI
    - Explain: Component structure, step tracking state, and basic layout
 
 **Phase 2: Form Steps Implementation (60 minutes)**
 
 3. **Step 3**: Build Step 1 - User Info form (name, email, phone)
 
+   - Provide: Complete code for UserInfoStep.tsx with form fields
    - Explain: Controlled inputs, state management, and form structure
 
 4. **Step 4**: Build Step 2 - Account Details (username, password, confirm password)
 
+   - Provide: Complete code for AccountDetailsStep.tsx with validation
    - Explain: Password fields, validation patterns, and security considerations
 
 5. **Step 5**: Build Step 3 - Review page displaying all data
+   - Provide: Complete code for ReviewStep.tsx with data display
    - Explain: Data display, formatting, and user confirmation patterns
 
 **Phase 3: Navigation & Logic (20 minutes)**
 
 6. **Step 6**: Implement navigation buttons and step switching logic
 
+   - Provide: Complete code for navigation functions and button handlers
    - Explain: Conditional rendering, step validation, and user flow control
 
 7. **Step 7**: Add simple validation (required fields only)
+   - Provide: Complete code for validation functions and error states
    - Explain: Basic form validation, error states, and user feedback
 
 **Phase 4: Data Persistence (10 minutes)**
 
 8. **Step 8**: Implement localStorage save/load functionality
 
+   - Provide: Complete code for data persistence hooks and functions
    - Explain: Browser storage, data serialization, and useEffect patterns
 
 9. **Step 9**: Add form submission with console logging
+   - Provide: Complete code for form submission handler and success state
    - Explain: Form submission handling, data processing, and debugging techniques
 
 #### Before Each Step
