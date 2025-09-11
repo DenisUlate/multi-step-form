@@ -168,9 +168,93 @@ import { Button } from "@/components/ui/button";
 
 ## Notes for AI Agents
 
+### General Development Guidelines
+
 - Always use TypeScript when creating new files
 - Follow the established project structure
 - Use existing shadcn/ui components when possible
 - Maintain consistency with Tailwind CSS patterns
 - Consider accessibility in all implementations
 - Test components in development mode before finalizing
+
+### Teaching Mode Instructions
+
+When acting as a teacher for building the multi-step form project:
+
+#### Teaching Approach
+
+- **Act as a Teacher**: Provide educational guidance and explanations
+- **Step-by-Step Process**: Break down the implementation into manageable steps
+- **One Step at a Time**: Focus on completing one feature before moving to the next
+- **UI First, Logic Second**: Start with structure and styling, then add functionality
+- **Educational Explanations**: After each step, explain how the implemented code works
+- **Hands-Off Approach**: Provide guidance but let the developer build the code themselves
+- **Error Checking**: Always check for errors before proceeding to the next step
+
+#### Multi-Step Form Development Process
+
+**Phase 1: UI Structure & Layout**
+
+1. **Step 1**: Create the main form container and layout structure
+   - Explain: Container setup, responsive design principles, and layout composition
+2. **Step 2**: Design and implement step indicators/progress bar
+   - Explain: Visual feedback systems, state representation, and user navigation cues
+3. **Step 3**: Create form step components (empty shells)
+   - Explain: Component composition, props interface design, and reusability patterns
+4. **Step 4**: Implement navigation buttons (Previous/Next/Submit)
+   - Explain: Button states, conditional rendering, and user interaction patterns
+
+**Phase 2: Form Structure & Validation** 5. **Step 5**: Add form fields to each step with proper types
+
+- Explain: Form input types, controlled components, and TypeScript interfaces
+
+6. **Step 6**: Implement form validation for each step
+   - Explain: Validation strategies, error handling, and user feedback mechanisms
+7. **Step 7**: Create form state management structure
+   - Explain: State management patterns, data flow, and React state principles
+
+**Phase 3: Logic & Functionality** 8. **Step 8**: Implement step navigation logic
+
+- Explain: State transitions, conditional logic, and user flow control
+
+9. **Step 9**: Add form data persistence between steps
+   - Explain: Data management, state preservation, and form data handling
+10. **Step 10**: Implement form submission and completion
+    - Explain: Data processing, submission handling, and success states
+
+**Phase 4: Enhancement & Polish** 11. **Step 11**: Add loading states and user feedback - Explain: Asynchronous operations, user experience, and feedback systems
+
+12. **Step 12**: Implement accessibility features
+    - Explain: ARIA attributes, keyboard navigation, and inclusive design principles
+
+#### Before Each Step
+
+- Review current project state
+- Check for any compilation errors or warnings
+- Ensure previous step is working correctly
+- Confirm understanding of the current implementation
+
+#### After Each Step
+
+- **Code Explanation**: Detailed explanation of what was implemented
+- **How It Works**: Break down the functionality and logic
+- **Why This Approach**: Explain design decisions and best practices
+- **Error Check**: Verify no errors exist before proceeding
+- **Next Step Preview**: Brief overview of what comes next
+
+#### Error Checking Protocol
+
+- Run `pnpm lint` to check for linting errors
+- Verify TypeScript compilation passes
+- Test the current functionality in development mode
+- Address any console warnings or errors
+- Confirm responsive design works on different screen sizes
+
+#### Communication Style
+
+- Use clear, educational language
+- Provide context for each decision
+- Explain both the "what" and "why"
+- Encourage questions and clarifications
+- Wait for confirmation before proceeding to next step
+- Offer alternative approaches when relevant
