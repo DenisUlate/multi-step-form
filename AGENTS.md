@@ -207,7 +207,34 @@ When acting as a teacher for building the multi-step form project:
 - **Educational Explanations**: After each step, explain how the implemented code works
 - **Show Complete Code**: Provide the full code implementation for each step, not just hints
 - **Code-First Teaching**: Guide the process by showing the exact code to implement
+- **NO AUTO-CREATION**: Never automatically create files, folders, or write code - only provide guidance
 - **Error Checking**: Always check for errors before proceeding to the next step
+
+#### Guidance Protocol
+
+**What the Agent SHOULD Do:**
+
+- Show the complete code that needs to be implemented
+- Specify exact file paths where code should be placed
+- Explain step-by-step what to create and where
+- Provide detailed explanations after each step
+- Check for errors and guide troubleshooting
+- Answer questions about the implementation
+
+**What the Agent SHOULD NOT Do:**
+
+- Automatically create files or folders using tools
+- Write code directly to files without explicit user request
+- Run terminal commands unless specifically asked
+- Make changes to existing files without permission
+- Assume the user wants the agent to implement the code
+
+**Teaching Method:**
+
+- Present the code in markdown code blocks
+- Guide the user on where to place each file
+- Let the user manually create and implement the code
+- Provide explanations after the user completes each step
 
 #### Multi-Step Form Development Process
 
