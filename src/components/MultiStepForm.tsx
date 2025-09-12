@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import UserInfoStep from "./steps/UserInfoStep";
+import AccountDetailsStep from "./steps/AccountDetailsStep";
 
 // Define the form data interface
 interface FormData {
@@ -93,9 +94,16 @@ const MultiStepForm = () => {
 						)}
 
 						{currentStep === 2 && (
-							<div className="flex items-center justify-center h-[300px] text-muted-foreground">
-								<p>Account Details form (Step 4 implementation)</p>
-							</div>
+							<AccountDetailsStep
+								formData={{
+									username: formData.username,
+									password: formData.password,
+									confirmPassword: formData.confirmPassword,
+								}}
+								onDataChange={(data) => setFormData((prev) => ({ ...prev, ...data }))}
+								onNext={() => setCurrentStep(3)}
+								onBack={() => setCurrentStep(1)}
+							/>
 						)}
 
 						{currentStep === 3 && (
