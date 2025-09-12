@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
+import UserInfoStep from "./steps/UserInfoStep";
 
 // Define the form data interface
 interface FormData {
@@ -77,39 +78,31 @@ const MultiStepForm = () => {
 						Step {currentStep}: {getStepTitle()}
 					</h2>
 
-					{/* Form content will go here */}
-					<div className="min-h-[300px] flex items-center justify-center text-muted-foreground">
-						<p>Form step {currentStep} content will be implemented in the next steps</p>
-					</div>
+					{/* Form Steps Content */}
+					<div className="min-h-[400px]">
+						{currentStep === 1 && (
+							<UserInfoStep
+								formData={{
+									name: formData.name,
+									email: formData.email,
+									phone: formData.phone,
+								}}
+								onDataChange={(data) => setFormData((prev) => ({ ...prev, ...data }))}
+								onNext={() => setCurrentStep(2)}
+							/>
+						)}
 
-					{/* Navigation buttons placeholder */}
-					<div className="flex justify-between mt-8">
-						<div>
-							{currentStep > 1 && (
-								<button
-									type="button"
-									className="px-4 py-2 text-muted-foreground hover:text-foreground transition-colors"
-									onClick={() => setCurrentStep(currentStep - 1)}>
-									← Previous
-								</button>
-							)}
-						</div>
-						<div>
-							{currentStep < totalSteps ? (
-								<button
-									type="button"
-									className="px-6 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90 transition-colors"
-									onClick={() => setCurrentStep(currentStep + 1)}>
-									Next →
-								</button>
-							) : (
-								<button
-									type="button"
-									className="px-6 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90 transition-colors">
-									Submit
-								</button>
-							)}
-						</div>
+						{currentStep === 2 && (
+							<div className="flex items-center justify-center h-[300px] text-muted-foreground">
+								<p>Account Details form (Step 4 implementation)</p>
+							</div>
+						)}
+
+						{currentStep === 3 && (
+							<div className="flex items-center justify-center h-[300px] text-muted-foreground">
+								<p>Review page (Step 5 implementation)</p>
+							</div>
+						)}
 					</div>
 				</div>
 			</div>
