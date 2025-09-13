@@ -2,6 +2,7 @@ import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import UserInfoStep from "./steps/UserInfoStep";
 import AccountDetailsStep from "./steps/AccountDetailsStep";
+import ReviewStep from "./steps/ReviewStep";
 
 // Define the form data interface
 interface FormData {
@@ -67,6 +68,18 @@ const MultiStepForm = () => {
 		}
 	};
 
+	const handleSubmit = () => {
+		// Save to localStorage
+		localStorage.setItem("multiStepFormData", JSON.stringify(formData));
+
+		console.log("Form submitted successfully!:", formData);
+
+		// Show sucess message or redirect as needed
+		alert(
+			"Registration completed successfully!\n\nData has been saved to localStorage and logged to console.\n\nCheck the browser console to see your data."
+		);
+	};
+
 	return (
 		<div className="min-h-screen bg-background text-foreground">
 			<div className="container mx-auto py-8 max-w-2xl">
@@ -107,9 +120,19 @@ const MultiStepForm = () => {
 						)}
 
 						{currentStep === 3 && (
-							<div className="flex items-center justify-center h-[300px] text-muted-foreground">
-								<p>Review page (Step 5 implementation)</p>
-							</div>
+							<ReviewStep
+								userInfo={{
+									name: formData.name,
+									email: formData.email,
+									phone: formData.phone,
+								}}
+								accountDetails={{
+									username: formData.username,
+									password: formData.password,
+								}}
+								onBack={() => setCurrentStep(2)}
+								onSubmit={handleSubmit}
+							/>
 						)}
 					</div>
 				</div>
